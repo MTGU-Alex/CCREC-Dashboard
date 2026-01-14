@@ -25,9 +25,13 @@ jobs:
           pip install -r requirements.txt
           pip install pyinstaller
 
-      - name: Build executable
-        run: |
-          pyinstaller --add-data "assets/styles.css;assets" --add-data "nces_data.csv;." --onefile main.py
+      - name: Build windows executable
+        if: runner.os == 'Windows'
+        run: pyinstaller --add-data "assets/styles.css;assets" --onefile main.py
+
+      - name: Build Mac executable
+        if: runner.os == 'macOS'
+        run: pyinstaller --add-data "assets/styles.css:assets" --onefile main.py
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v6
