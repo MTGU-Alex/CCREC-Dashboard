@@ -10,7 +10,9 @@ NCES LOCALES: https://data-nces.opendata.arcgis.com/search?groupIds=455147561fd3
 - Can't find 2020-21
 '''
 
-print('starting dashboard')
+print('- Starting dashboard')
+print('- Look for a folder selection window with a title of \"Please select a source file folder\"')
+print('- It may take a minute or two to pop up')
 
 # Reading in data with data_loader.py and mapping codes
 data_frames = data_loader.load_data()
