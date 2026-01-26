@@ -5,7 +5,7 @@ This dashboard uses data stored in the NSC CCREC data repository, specifically t
 **Downloading the Dashboard:** The dashboard is available for both mac and windows. To download, navigate to [this repository in GitHub](https://github.com/MTGU-Alex/ccrec_dashboard_private) and click on "Downloadable Dashboard Files" under releases:
 [ ![Releases Screenshot](https://github.com/MTGU-Alex/ccrec_dashboard_private/blob/master/Images/Releases%20Screen%20Shot.png) ](https://github.com/MTGU-Alex/ccrec_dashboard_private)
 You will then have the option to dowload the dashboard as an executable for either Windows or Mac:
-[ ![Downloadable Files Screenshot](https://github.com/MTGU-Alex/ccrec_dashboard_private/blob/master/Images/Releases%20Screen%20Shot.png) ](https://github.com/MTGU-Alex/ccrec_dashboard_private/releases/tag/v1.0.0)
+[ ![Downloadable Files Screenshot](https://github.com/MTGU-Alex/ccrec_dashboard_private/blob/master/Images/Downloadable%20Files%20Screen%20Shot.png) ](https://github.com/MTGU-Alex/ccrec_dashboard_private/releases/tag/v1.0.0)
 
 **Data File Structure:**
 As 
