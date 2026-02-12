@@ -128,7 +128,7 @@ def register_callbacks(app, AY_df, agg_services_df, duration_by_student_month_ty
 
         # Getting header numbers
         service_columns = ['Tutoring/Homework Assistance', 'Mentoring', 'Financial Aid Counseling/Advising', 'Counseling/Advising', 'College Visit', 'Job Site Visit/Job Shadowing', 'Summer Programs', 'Educational Field Trips', 'Student Workshops', 'Parent/Family Workshops', 'Family Counseling/ Advising', 'Family College Visit', 'Other Family Events']
-        total_hours = filtered_df[service_columns].sum().sum()/60
+        total_hours = round(filtered_df[service_columns].sum().sum()/60, 2)
         total_students = len(filtered_df)
         total_schools = len(filtered_df[filtered_df['School NCES ID'] != '000099999999']['School NCES ID'].drop_duplicates())
 
@@ -200,7 +200,7 @@ def register_callbacks(app, AY_df, agg_services_df, duration_by_student_month_ty
             filtered_df = filtered_df[filtered_df[key] == val]
         
         service_columns = ['Tutoring/Homework Assistance', 'Mentoring', 'Financial Aid Counseling/Advising', 'Counseling/Advising', 'College Visit', 'Job Site Visit/Job Shadowing', 'Summer Programs', 'Educational Field Trips', 'Student Workshops', 'Parent/Family Workshops', 'Family Counseling/ Advising', 'Family College Visit', 'Other Family Events']
-        total_hours = filtered_df[service_columns].sum().sum()/60
+        total_hours = round(filtered_df[service_columns].sum().sum()/60, 2)
         total_students = len(filtered_df)
         total_schools = len(filtered_df[filtered_df['School NCES ID'] != '000099999999']['School NCES ID'].drop_duplicates())
 
@@ -380,6 +380,7 @@ def register_callbacks(app, AY_df, agg_services_df, duration_by_student_month_ty
         global load_yty_filters
         trigger = ctx.triggered_id
         filters = active_filters.copy()
+        year_list.sort()
 
         if temp_filters and len(active_filters) == 0 and load_yty_filters:
             filters = temp_filters.copy()
@@ -396,7 +397,7 @@ def register_callbacks(app, AY_df, agg_services_df, duration_by_student_month_ty
             filtered_df = filtered_df[filtered_df[key] == val]
 
         service_columns = ['Tutoring/Homework Assistance', 'Mentoring', 'Financial Aid Counseling/Advising', 'Counseling/Advising', 'College Visit', 'Job Site Visit/Job Shadowing', 'Summer Programs', 'Educational Field Trips', 'Student Workshops', 'Parent/Family Workshops', 'Family Counseling/ Advising', 'Family College Visit', 'Other Family Events']
-        total_hours = filtered_df[service_columns].sum().sum()/60
+        total_hours = round(filtered_df[service_columns].sum().sum()/60, 2)
         total_students = len(filtered_df)
         total_schools = len(filtered_df[filtered_df['School NCES ID'] != '000099999999']['School NCES ID'].drop_duplicates())
 
@@ -455,6 +456,9 @@ def register_callbacks(app, AY_df, agg_services_df, duration_by_student_month_ty
             color='High School AY',
             markers=True,
             title='Service Participation Percentage by Month',
+            category_orders={
+                'High School AY': year_list
+            }
         ).update_layout(paper_bgcolor="#E5E5E5", plot_bgcolor='lightgrey', margin=dict(pad=0, t=40))
 
         filtered_aggregate_services = agg_services_df[(agg_services_df['High School AY'].isin(year_list)) & (agg_services_df['Service Type Code'].isin(service_type_list))]
@@ -469,7 +473,10 @@ def register_callbacks(app, AY_df, agg_services_df, duration_by_student_month_ty
             y='Hours per Student',
             color='High School AY',
             markers=True,
-            title='Average Service Hours per Student by Month'
+            title='Average Service Hours per Student by Month',
+            category_orders={
+                'High School AY': year_list
+            }
         ).update_layout(paper_bgcolor="#E5E5E5", plot_bgcolor='lightgrey', margin=dict(pad=0, t=40))
 
         filter_tags = []

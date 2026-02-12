@@ -5,11 +5,6 @@ import data_loader
 import components
 from callbacks import register_callbacks
 
-'''
-NCES LOCALES: https://data-nces.opendata.arcgis.com/search?groupIds=455147561fd3416daa180395fb4e9237
-- Can't find 2020-21
-'''
-
 print('- Starting dashboard')
 print('- Look for a folder selection window with a title of \"Please select a source file folder\"')
 

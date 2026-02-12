@@ -32,8 +32,7 @@ def demographics_layout(AY_df):
             ], id='demographics-header-left'),
             html.Div([
                 dcc.Link('Services', href='/services', className='link-button'),
-                dcc.Link('Year to Year', href='/yty', className='link-button'),
-                dcc.Link('Analytics', href='/analytics', className='link-button')
+                dcc.Link('Year to Year', href='/yty', className='link-button')
             ], id='demographics-header-right')
         ], id='demographics-full-header'),
         html.Div([
@@ -82,8 +81,7 @@ def services_layout(AY_df):
             ], id='services-header-left'),
             html.Div([
                 dcc.Link('Demographics', href='/demographics', className='link-button'),
-                dcc.Link('Year to Year', href='/yty', className='link-button'),
-                dcc.Link('Analytics', href='/analytics', className='link-button')
+                dcc.Link('Year to Year', href='/yty', className='link-button')
             ], id='services-header-right')
         ], id='services-full-header'),
         html.Div([
@@ -152,8 +150,7 @@ def year_to_year_layout(AY_df):
             ], id='yty-header-left'),
             html.Div([
                 dcc.Link('Demographics', href='/demographics', className='link-button'),
-                dcc.Link('Services', href='/services', className='link-button'),                
-                dcc.Link('Analytics', href='/analytics', className='link-button')
+                dcc.Link('Services', href='/services', className='link-button')
             ], id='yty-header-right')
         ], id='yty-full-header'),
         html.Div([

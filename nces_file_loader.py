@@ -3,6 +3,10 @@ Helper script for formating yearly NCES locale files into a single pickle.
 Raw files go in \\raw_locale_files
 Each file needs fields: nces id, school name, Locale code, and school year
 - Code used for cleaning csvs below (commented out)
+
+NCES LOCALES: https://data-nces.opendata.arcgis.com/search?groupIds=455147561fd3416daa180395fb4e9237
+- Can't find 2020-21
+
 '''
 
 import pandas as pd
