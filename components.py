@@ -13,7 +13,7 @@ def demographics_layout(AY_df):
                         value=sorted(AY_df['High School AY'].unique())[-1],
                         clearable=False
                     ),
-                    html.H1('CCREC Descriptive Dashboard: Demographics', id='demographics-title')
+                    html.H1('Grant Level CCREC Dashboard: Demographics', id='demographics-title')
                 ], id='demographics-header-row-1'),
                 html.Div([
                     html.Div([
@@ -62,7 +62,7 @@ def services_layout(AY_df):
                         value=sorted(AY_df['High School AY'].unique())[-1],
                         clearable=False
                     ),
-                    html.H1('CCREC Descriptive Dashboard: Services', id='services-title')
+                    html.H1('Grant Level CCREC Dashboard: Services', id='services-title')
                 ], id='services-header-row-1'),
                 html.Div([
                     html.Div([
@@ -131,7 +131,7 @@ def year_to_year_layout(AY_df):
                         value=sorted(AY_df['High School AY'].unique())[-1],
                         clearable=False
                     ),
-                    html.H1('CCREC Descriptive Dashboard: Year to Year View', id='yty-title')
+                    html.H1('Grant Level CCREC Dashboard: Year to Year View', id='yty-title')
                 ], id='yty-header-row-1'),
                 html.Div([
                     html.Div([

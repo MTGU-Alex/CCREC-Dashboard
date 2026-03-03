@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+#demographics-title, #services-title, #yty-title{
+    padding-left: 40px;
+}
+
 #demographics-year-filter{
     width: 15%;
 }
